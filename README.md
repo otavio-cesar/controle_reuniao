@@ -1,2 +1,2 @@
 # controle_reuniao
-Agendamento de reuniçoes
+Agendamento de reuniões
