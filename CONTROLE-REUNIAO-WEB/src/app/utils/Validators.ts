@@ -1,6 +1,11 @@
 import { AbstractControl, ValidatorFn, FormGroup } from "@angular/forms";
 import { formatTimeMillis } from './DateTimeFormat';
 
+//------
+// Validadores 
+//------
+
+// Valida se uma hora inicial é menor que uma outra hora final
 export function maiorMenorValidator(menor: string, maior: string): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
     let inicioControl = (<FormGroup>control.parent)?.get(menor)

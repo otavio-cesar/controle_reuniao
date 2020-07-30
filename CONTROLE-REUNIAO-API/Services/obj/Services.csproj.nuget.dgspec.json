@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj": {}
+    "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj": {
+    "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\otavio.cesario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\obj\\",
+        "projectPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\otavio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\otavio.cesario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\otavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,6 +44,24 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.2, )"
             }
           },
           "imports": [
@@ -58,21 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj": {
+    "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\otavio.cesario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\obj\\",
+        "projectPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\otavio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\otavio.cesario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\otavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -85,8 +109,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\otavio.cesario\\Documents\\RCS\\teste c\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj"
+              "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj"
               }
             }
           }
@@ -114,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

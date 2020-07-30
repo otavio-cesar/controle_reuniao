@@ -1,0 +1,25 @@
+
+.mat-form-field.example-full-width.margin-left {
+  margin-left: 20px !important;
+}
+
+.warningDiv{
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: -8px;
+}
+.warningDiv > div{
+  border:thin gold solid;
+  background-color: #fbe1a0;
+  border-radius: 4px;
+  margin-bottom: 6px !important;
+  padding-bottom: 8px;
+  color:#423811;
+  margin-bottom: 6px;
+}
+
+.warningDiv > div > mat-icon {
+  transform: translate(0,6px) scale(0.85);
+  color:#ffad33;
+  padding-left: 5px
+}

@@ -1,6 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
+//------
+// Componente para mostrar resultado das ações do usuário
+//------
+
 @Component({
   selector: 'snack-bar-component-example-snack',
   templateUrl: 'mensagem-template.html',
@@ -13,7 +17,7 @@ import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 export class SnackBarNotificationComponent implements OnInit {
 
   //excluido, salvo, editado, etc
-  opcao
+  opcao: string
 
   constructor(@Inject(MAT_SNACK_BAR_DATA) public data: any) { }
 

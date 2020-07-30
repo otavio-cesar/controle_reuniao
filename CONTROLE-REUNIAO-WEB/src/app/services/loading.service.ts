@@ -2,6 +2,10 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
+// -----
+// Essa classe é responsavél por controlar parte da lógica que mostra o carregamento das requisições
+// -----
+
 @Injectable()
 export class LoadingService {
 
@@ -18,20 +22,14 @@ export class LoadingService {
   // Service message commands
   showLoading() {
     this.pilha.push('')
-
     if (this.pilha.length == 1) {
-      setTimeout(() => {
-        this.showLoadingSource.next(true);
-      })
+      setTimeout(() => { this.showLoadingSource.next(true); })
     }
   }
 
   hideLoading() {
     this.pilha.pop()
-
     if (this.pilha.length == 0)
-      setTimeout(() => {
-        this.hideLoadingSource.next(false);
-      })
+      setTimeout(() => { this.hideLoadingSource.next(false); })
   }
 }

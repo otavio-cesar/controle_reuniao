@@ -1,0 +1,72 @@
+<h1 mat-dialog-title>
+  Cadastrar evento
+  <mat-divider></mat-divider>
+</h1>
+
+<form [formGroup]="eventoForm" (ngSubmit)="salvarHoraExtraSubmit()" class="example-form" style="min-width: 500px;">
+
+  <mat-form-field class="example-full-width" style="width:130px">
+    <mat-label>Dia</mat-label>
+    <input matInput [matDatepicker]="picker" [errorStateMatcher]="matcher" formControlName="dataFormControl" appMaskDate
+      (dateChange)="dateTimeChange()" [min]="minDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="eventoForm.controls.dataFormControl.hasError('required')">
+      Informe o dia
+    </mat-error>
+    <mat-error *ngIf="eventoForm.controls.dataFormControl.hasError('matDatepickerMin')">
+      Dia deve ser igual ou maior que hoje
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width margin-left" style="width:100px">
+    <mat-label>Início</mat-label>
+    <input matInput formControlName="inicioFormControl" [errorStateMatcher]="matcher" appMaskTime
+      (change)="dateTimeChange()">
+    <mat-error *ngIf="eventoForm.controls.inicioFormControl.hasError('required')">
+      Informe o início
+    </mat-error>
+    <mat-error *ngIf="eventoForm.controls.inicioFormControl.hasError('pattern')">
+      Hora inválida
+    </mat-error>
+    <mat-error *ngIf="eventoForm.controls.inicioFormControl.errors?.maiorMenor ">
+      Início foi maior
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width margin-left" style="width:100px">
+    <mat-label>Término</mat-label>
+    <input matInput formControlName="terminoFormControl" [errorStateMatcher]="matcher" appMaskTime
+      (change)="dateTimeChange()">
+    <mat-error *ngIf="eventoForm.controls.terminoFormControl.hasError('required')">
+      Informe o término
+    </mat-error>
+    <mat-error *ngIf="eventoForm.controls.terminoFormControl.hasError('pattern')">
+      Hora inválida
+    </mat-error>
+    <mat-error *ngIf="eventoForm.controls.inicioFormControl.errors?.maiorMenor ">
+      Fim foi menor
+    </mat-error>
+  </mat-form-field>
+
+  <div>
+    <mat-form-field class="example-full-width" style="margin-top:15px;" style="width: 100%;">
+      <input type="text" placeholder="Sala" aria-label="Number" matInput
+        [formControl]="eventoForm.controls.salaFormControl" [matAutocomplete]="auto" [errorStateMatcher]="matcher"
+        (blur)="salaBlur()">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredSalas | async" [value]="option.Nome">
+          {{option.Nome}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-dialog-actions>
+      <button mat-flat-button color="primary" style="margin-top:5px;">Salvar</button>
+      <button mat-raised-button style="margin-top:5px;" mat-dialog-close>Cancelar</button>
+    </mat-dialog-actions>
+  </div>
+
+</form>

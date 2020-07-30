@@ -19,7 +19,7 @@ namespace Model.Servicos
             return reuniaoContext.Set<T>().ToList();
         }
 
-        public virtual T BuscaPorId(int id)
+        public virtual T ObterPorId(int id)
         {
             return reuniaoContext.Set<T>().Find(id);
         }
@@ -54,7 +54,7 @@ namespace Model.Servicos
         {
             try
             {
-                reuniaoContext.Set<T>().Remove(BuscaPorId(id));
+                reuniaoContext.Set<T>().Remove(ObterPorId(id));
                 reuniaoContext.SaveChanges();
             }
             catch (Exception e)

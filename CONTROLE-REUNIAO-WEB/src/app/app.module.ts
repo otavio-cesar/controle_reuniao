@@ -27,7 +27,7 @@ export const MY_FORMATS = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
