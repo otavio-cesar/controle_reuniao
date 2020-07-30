@@ -6,19 +6,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
-<<<<<<< HEAD
-=======
+
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
->>>>>>> 264237ca6a0bbe54de3d0cd0ad749b9ba6aecc1e
+
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-<<<<<<< HEAD
-=======
+
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
->>>>>>> 264237ca6a0bbe54de3d0cd0ad749b9ba6aecc1e
+
   </ItemGroup>
 
 </Project>
