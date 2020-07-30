@@ -7,7 +7,7 @@ import { EventoService } from '../../../services/evento.service';
 import { SalaService } from '../../../services/sala.service';
 import { Evento } from '../../../model/Evento';
 import { Sala } from '../../../model/Sala';
-import { LoadingService } from '../../../utils/LoadingService';
+import { LoadingService } from '../../../services/loading.service';
 import { formatTime, timeToString } from '../../../utils/DateTimeFormat';
 import { startWith, map } from 'rxjs/operators';
 import { maiorMenorValidator } from '../../../utils/Validators';

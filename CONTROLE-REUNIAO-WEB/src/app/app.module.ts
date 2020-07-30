@@ -11,7 +11,11 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { getPortuguesePaginatorIntl } from './utils/portuguese-paginator-intl';
 import { httpInterceptorProviders } from './http-interceptors';
 import { AngularMaterialModule } from './angular-material.module';
-import { LoadingService } from './utils/LoadingService';
+import { LoadingService } from './services/loading.service';
+import { EventoComponent } from './pages/evento/evento.component';
+import { DialogCadastroEvento } from './pages/evento/cadastro-evento/cadastro-evento';
+import { EventoService } from './services/evento.service';
+import { SalaService } from './services/sala.service';
 
 export const MY_FORMATS = {
   parse: {
@@ -28,6 +32,8 @@ export const MY_FORMATS = {
 @NgModule({
   declarations: [
     AppComponent,
+    EventoComponent,
+    DialogCadastroEvento
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,8 @@ export const MY_FORMATS = {
   ],
   providers: [
     LoadingService,
+    EventoService,
+    SalaService,
     httpInterceptorProviders,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     {

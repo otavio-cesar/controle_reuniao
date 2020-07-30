@@ -18,8 +18,8 @@ namespace Models.Context
         {
             var salasIniciais = new List<Sala>(new[] {
                 new Sala { SalaId = 1, Nome = "Sala executiva" },
-                new Sala { SalaId = 1, Nome = "Sala gerencial" },
-                new Sala { SalaId = 1, Nome = "Sala padrão" }
+                new Sala { SalaId = 2, Nome = "Sala gerencial" },
+                new Sala { SalaId = 3, Nome = "Sala padrão" }
             });
             
             // Cria salas padrões no primeiro migration

@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { LoadingService } from '../utils/LoadingService';
+import { LoadingService } from '../services/loading.service';
 
 /** Pass untouched request through to the next request handler. */
 @Injectable()

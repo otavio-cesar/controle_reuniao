@@ -1,4 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color: snow; }
+
+table{
+    width: 100%;
+}
+
+.mat-paginator {
+    /* margin-top: 17.5px;; */
+    background-color: transparent;
+}
+
+.mat-card{
+    margin-left: 1% !important; 
+    margin-right: 1% !important;
+}
+
+.mat-card-title{
+    margin-bottom: 18px !important;
+    margin-top: 2px !important;
+}

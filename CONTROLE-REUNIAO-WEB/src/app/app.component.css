@@ -79,3 +79,7 @@ a:hover {
   z-index: 1001;
   right: 0;
 }
+
+.content-page{
+  margin-top: 75px;
+}

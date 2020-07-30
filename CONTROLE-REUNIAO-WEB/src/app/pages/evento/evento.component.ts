@@ -17,9 +17,9 @@ import { EventoService } from '../../services/evento.service';
 import { DialogCadastroEvento } from './cadastro-evento/cadastro-evento';
 
 @Component({
-  selector: 'app-evento-compensada',
-  templateUrl: './evento-compensada.component.html',
-  styleUrls: ['./evento-compensada.component.css']
+  selector: 'app-evento',
+  templateUrl: './evento.component.html',
+  styleUrls: ['./evento.component.css']
 })
 export class EventoComponent implements OnInit {
 
