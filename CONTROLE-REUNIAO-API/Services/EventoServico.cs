@@ -1,39 +1,35 @@
 ﻿using Model.Servicos;
 using Models.Context;
 using Models.Entities;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Servicos
 {
     public class EventoServico : ServicoBase<Evento>
     {
+        private SalaServico salaService;
+
         public EventoServico(ControleReuniaoContext cx) : base(cx)
         {
-           
+            salaService = new SalaServico(cx);
         }
 
-        //public virtual Evento BuscaPorNome(string Nome)
-        //{
-        //    var sistemas = base.ObterTodos().Where(x => x.Nome == Nome).ToList();
+        public IList<Evento> ObterTodosEager()
+        {
+            var eventos = base.ObterTodos().ToList();
 
-        //    Evento sistema = sistemas[0];
+            // adiciona entidade Sala ao evento
+            eventos.ForEach(e => { completaDados(e); });
 
-        //    return sistema;
-        //}
+            return eventos;
+        }
 
-        //public IList<Evento> obterTodosEager()
-        //{
-        //    var sistema = ObterTodos();
-        //    completaDados(Evento);
-        //    return Evento;
-        //}      
-
-        //private void completaDados(IList<Evento> sistemas)
-        //{
-        //    foreach (var s in sistemas)
-        //    {
-        //        s.SistemaClientes = sistemaClienteServico.ObterPorSistema(s.SistemaId).ToList();
-        //    }
-        //}
+        private void completaDados(Evento evento)
+        {
+            evento.Sala = salaService.ObterPorId(evento.SalaId);
+        }
 
     }
 }

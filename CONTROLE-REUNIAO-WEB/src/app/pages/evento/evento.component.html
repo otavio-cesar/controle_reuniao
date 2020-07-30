@@ -1,0 +1,53 @@
+<mat-card style="margin: -5px 35px 20px 35px">
+  <mat-card-title>Eventos agendados</mat-card-title>
+
+  <table mat-table [dataSource]="dataSourceEvento" matSort class="mat-elevation-z8"
+    (matSortChange)="sortDataEvento($event)">
+
+    <ng-container matColumnDef="Data">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Dia </th>
+      <td mat-cell *matCellDef="let element"> {{element.Data | date: 'dd/MM/yyyy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Sala">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sala </th>
+      <td mat-cell *matCellDef="let element" style="max-width:150px;">
+        {{element.Sala?.Nome}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Inicio">
+      <th mat-header-cell *matHeaderCellDef>Início</th>
+      <td mat-cell *matCellDef="let element"> {{element.Inicio | hourPipe}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Termino">
+      <th mat-header-cell *matHeaderCellDef>Término</th>
+      <td mat-cell *matCellDef="let element"> {{element.Termino | hourPipe}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Editar">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" aria-label="Editar" (click)="editarEvento(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Excluir">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" aria-label="Excluir" (click)="excluirEvento(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsEvento"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsEvento;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[15, 25, 45, 100]" showFirstLastButtons></mat-paginator>
+
+</mat-card>

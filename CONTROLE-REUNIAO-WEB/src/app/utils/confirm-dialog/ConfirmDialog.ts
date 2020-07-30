@@ -1,6 +1,10 @@
 import { Component, Inject, OnInit, } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
+//------
+// Componente responsável por mostrar caixas de diálogo
+//------
+
 @Component({
   selector: 'confirm-dialog',
   templateUrl: 'confirm-dialog.html',
@@ -9,7 +13,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class DialogComfirm implements OnInit {
 
   // excluir, etc.
-  opcao
+  opcao: string
 
   constructor(
     public dialogRef: MatDialogRef<DialogComfirm>,

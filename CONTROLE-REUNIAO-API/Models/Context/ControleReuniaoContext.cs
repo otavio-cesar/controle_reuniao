@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Models.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Models.Context
 {
@@ -14,5 +12,19 @@ namespace Models.Context
 
         public DbSet<Evento> Evento { get; set; }
         public DbSet<Sala> Sala { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var salasIniciais = new List<Sala>(new[] {
+                new Sala { SalaId = 1, Nome = "Sala executiva" },
+                new Sala { SalaId = 1, Nome = "Sala gerencial" },
+                new Sala { SalaId = 1, Nome = "Sala padrão" }
+            });
+            
+            // Cria salas padrões no primeiro migration
+            modelBuilder.Entity<Sala>().HasData(salasIniciais);
+        }
     }
+
 }

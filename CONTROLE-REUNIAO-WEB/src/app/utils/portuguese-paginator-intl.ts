@@ -1,5 +1,9 @@
 import { MatPaginatorIntl } from '@angular/material/paginator';
 
+//------
+// Traduz paginação do angular material para PT.
+//------
+
 const portugueseRangeLabel = (page: number, pageSize: number, length: number) => {
   if (length == 0 || pageSize == 0) { return `0 de ${length}`; }
   
