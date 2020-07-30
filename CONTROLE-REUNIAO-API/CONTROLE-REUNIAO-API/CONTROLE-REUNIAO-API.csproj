@@ -6,14 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
+
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-=======
+
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
->>>>>>> 264237ca6a0bbe54de3d0cd0ad749b9ba6aecc1e
+
   </ItemGroup>
 
   <ItemGroup>
