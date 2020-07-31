@@ -1,0 +1,12 @@
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\bin\Debug\netcoreapp3.1\Utils.deps.json
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\bin\Debug\netcoreapp3.1\Utils.dll
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\bin\Debug\netcoreapp3.1\Utils.pdb
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\obj\Debug\netcoreapp3.1\Utils.csprojAssemblyReference.cache
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfoInputs.cache
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\obj\Debug\netcoreapp3.1\Utils.AssemblyInfo.cs
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.CoreCompileInputs.cache
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\obj\Debug\netcoreapp3.1\Utils.csproj.CopyComplete
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\obj\Debug\netcoreapp3.1\Utils.dll
+C:\Users\otavio\Documents\otavio-workspace\cartao de todos\controle_reuniao\CONTROLE-REUNIAO-API\Utils\obj\Debug\netcoreapp3.1\Utils.pdb

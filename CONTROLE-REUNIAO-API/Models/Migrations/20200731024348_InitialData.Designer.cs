@@ -9,7 +9,7 @@ using Models.Context;
 namespace Models.Migrations
 {
     [DbContext(typeof(ControleReuniaoContext))]
-    [Migration("20200730154944_InitialData")]
+    [Migration("20200731024348_InitialData")]
     partial class InitialData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -80,7 +80,7 @@ namespace Models.Migrations
             modelBuilder.Entity("Models.Entities.Evento", b =>
                 {
                     b.HasOne("Models.Entities.Sala", "Sala")
-                        .WithMany()
+                        .WithMany("Evento")
                         .HasForeignKey("SalaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

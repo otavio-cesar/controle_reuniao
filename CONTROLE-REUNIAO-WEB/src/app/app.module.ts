@@ -16,6 +16,10 @@ import { EventoComponent } from './pages/evento/evento.component';
 import { DialogCadastroEvento } from './pages/evento/cadastro-evento/cadastro-evento';
 import { EventoService } from './services/evento.service';
 import { SalaService } from './services/sala.service';
+import { MaskTimeDirective, MaskDateDirective } from './utils/MaskDirectives';
+import { HourPipe } from './utils/HourPipe';
+import { DialogComfirm } from './utils/confirm-dialog/ConfirmDialog';
+import { SnackBarNotificationComponent } from './utils/snackbar/SnackBar';
 
 export const MY_FORMATS = {
   parse: {
@@ -33,7 +37,12 @@ export const MY_FORMATS = {
   declarations: [
     AppComponent,
     EventoComponent,
-    DialogCadastroEvento
+    DialogCadastroEvento,
+    MaskDateDirective,
+    MaskTimeDirective,
+    HourPipe,
+    DialogComfirm,
+    SnackBarNotificationComponent,
   ],
   imports: [
     BrowserModule,

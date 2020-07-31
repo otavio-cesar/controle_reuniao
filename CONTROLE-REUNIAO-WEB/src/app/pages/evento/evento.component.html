@@ -1,19 +1,32 @@
 <mat-card>
   <mat-card-title>Eventos agendados</mat-card-title>
 
+  <div class="button-right">
+    <button mat-raised-button color="primary" (click)="cadastrarEvento()">Novo</button>
+  </div>
+
+  <div style="clear: both;"></div>
+
   <table mat-table [dataSource]="dataSourceEvento" matSort class="mat-elevation-z8"
     (matSortChange)="sortDataEvento($event)">
-
-    <ng-container matColumnDef="Data">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Dia </th>
-      <td mat-cell *matCellDef="let element"> {{element.Data | date: 'dd/MM/yyyy'}} </td>
-    </ng-container>
 
     <ng-container matColumnDef="Sala">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Sala </th>
       <td mat-cell *matCellDef="let element">
         {{element.Sala?.Nome}}
       </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="Responsavel">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Responsável </th>
+      <td mat-cell *matCellDef="let element">
+        {{element.Responsavel}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Data">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Dia </th>
+      <td mat-cell *matCellDef="let element"> {{element.Dia | date: 'dd/MM/yyyy'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Inicio">
@@ -24,13 +37,6 @@
     <ng-container matColumnDef="Termino">
       <th mat-header-cell *matHeaderCellDef>Término</th>
       <td mat-cell *matCellDef="let element"> {{element.Termino | hourPipe}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="Responsavel">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Responsável </th>
-      <td mat-cell *matCellDef="let element">
-        {{element.Responsavel}}
-      </td>
     </ng-container>
 
     <ng-container matColumnDef="Editar">
@@ -55,6 +61,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumnsEvento;"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[15, 25, 45, 100]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[10, 5, 15, 20]" showFirstLastButtons></mat-paginator>
 
 </mat-card>

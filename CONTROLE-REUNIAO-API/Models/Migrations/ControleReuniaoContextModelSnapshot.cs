@@ -78,7 +78,7 @@ namespace Models.Migrations
             modelBuilder.Entity("Models.Entities.Evento", b =>
                 {
                     b.HasOne("Models.Entities.Sala", "Sala")
-                        .WithMany()
+                        .WithMany("Evento")
                         .HasForeignKey("SalaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

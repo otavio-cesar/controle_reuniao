@@ -3,7 +3,31 @@
   <mat-divider></mat-divider>
 </h1>
 
+<div *ngIf="showAvisoDisponibilidade" mat-dialog-content class="warningDiv">
+  <div>
+    <mat-icon>warning</mat-icon>
+    Sala indisponível para o horário informado.
+  </div>
+</div>
+
+
 <form [formGroup]="eventoForm" (ngSubmit)="salvarEventoSubmit()" class="example-form" style="min-width: 500px;">
+
+  <div>
+    <mat-form-field class="example-full-width" style="margin-top:15px;" style="width: 100%;">
+      <input type="text" placeholder="Sala" aria-label="Number" matInput tabindex="-1"
+        [formControl]="eventoForm.controls.salaFormControl" [matAutocomplete]="auto" [errorStateMatcher]="matcher"
+        (blur)="verificaSelecaoEDisponibilidade()">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" showPanel="false">
+        <mat-option *ngFor="let option of filteredSalas | async" [value]="option.Nome">
+          {{option.Nome}}
+        </mat-option>
+      </mat-autocomplete>
+      <mat-error *ngIf="eventoForm.controls.salaFormControl.hasError('required') ">
+        Informe a sala
+      </mat-error>
+    </mat-form-field>
+  </div>
 
   <mat-form-field class="example-full-width" style="width:130px">
     <mat-label>Dia</mat-label>
@@ -45,26 +69,24 @@
       Hora inválida
     </mat-error>
     <mat-error *ngIf="eventoForm.controls.inicioFormControl.errors?.maiorMenor ">
-      Fim foi menor
+      Término foi menor
     </mat-error>
   </mat-form-field>
 
   <div>
     <mat-form-field class="example-full-width" style="margin-top:15px;" style="width: 100%;">
-      <input type="text" placeholder="Sala" aria-label="Number" matInput
-        [formControl]="eventoForm.controls.salaFormControl" [matAutocomplete]="auto" [errorStateMatcher]="matcher"
-        (blur)="salaBlur()">
-      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredSalas | async" [value]="option.Nome">
-          {{option.Nome}}
-        </mat-option>
-      </mat-autocomplete>
+      <input type="text" placeholder="Responsável" aria-label="Responsável" matInput
+        [formControl]="eventoForm.controls.responsavelFormControl" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="eventoForm.controls.responsavelFormControl.hasError('required') ">
+        Informe o responsável
+      </mat-error>
     </mat-form-field>
   </div>
 
   <div>
     <mat-dialog-actions>
-      <button mat-flat-button color="primary" style="margin-top:5px;">Salvar</button>
+      <button mat-flat-button color="primary" style="margin-top:5px;"
+        [disabled]="showAvisoDisponibilidade || !eventoForm.valid">Salvar</button>
       <button mat-raised-button style="margin-top:5px;" mat-dialog-close>Cancelar</button>
     </mat-dialog-actions>
   </div>

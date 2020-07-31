@@ -1,18 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarNotificationComponent } from '../../utils/snackbar/SnackBar';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
-import { comparacaoTime } from '../../utils/DateTimeFormat';
 import { DialogComfirm } from '../../utils/confirm-dialog/ConfirmDialog';
 import { Evento } from '../../model/Evento';
 import { MyErrorStateMatcher } from '../../utils/MyErrorStateMatcher';
-import { LoadingService } from '../../services/loading.service';
 import { EventoService } from '../../services/evento.service';
 import { DialogCadastroEvento } from './cadastro-evento/cadastro-evento';
 
@@ -32,7 +27,6 @@ export class EventoComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(
-    private loadingService: LoadingService,
     private eventoService: EventoService,
     public dialog: MatDialog,
     private _snackBar: MatSnackBar
@@ -43,39 +37,43 @@ export class EventoComponent implements OnInit {
   ngOnInit(): void {
     this.dataSourceEvento.paginator = this.paginator;
     this.dataSourceEvento.sort = this.sort;
+
+    this.atualizaTableEvento()
   }
 
   // workaround. esses campos falharam na ordenacao mat-sort
   sortDataEvento(sort: Sort) {
-   
+    if (sort.active == "Sala")
+      this.dataSourceEvento.data = this.dataSourceEvento.data.sort((a, b) =>
+        (a.Sala.Nome > b.Sala.Nome ? 1 : -1) * (sort.direction == "asc" ? 1 : -1));
+    if (sort.active == "Data")
+      this.dataSourceEvento.data = this.dataSourceEvento.data.sort((a, b) =>
+        (a.Dia > b.Dia ? 1 : -1) * (sort.direction == "asc" ? 1 : -1));
   }
 
   atualizaTableEvento() {
-    this.loadingService.showLoading();
     this.eventoService.buscaEvento()
       .subscribe(value => {
         console.log(value)
         this.dataSourceEvento.data = value
-        this.loadingService.hideLoading();
       }, error => {
         console.log(error)
-        this.loadingService.hideLoading();
       });
   }
 
   cadastrarEvento() {
-      const dialogRef = this.dialog.open(DialogCadastroEvento);
-      dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
-        if (result) {
-          this._snackBar.openFromComponent(SnackBarNotificationComponent, {
-            duration: 2000,
-            data: { opcao: "salvo" }
-          });
-          // atualiza table
-          this.atualizaTableEvento();
-        }
-      });
+    const dialogRef = this.dialog.open(DialogCadastroEvento);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if (result) {
+        this._snackBar.openFromComponent(SnackBarNotificationComponent, {
+          duration: 2000,
+          data: { opcao: "salvo" }
+        });
+        // atualiza table
+        this.atualizaTableEvento();
+      }
+    });
   }
 
   excluirEvento(row: Evento) {
@@ -86,10 +84,8 @@ export class EventoComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.loadingService.showLoading();
         this.eventoService.excluir(row.EventoId)
           .subscribe(() => {
-            this.loadingService.hideLoading();
             // atualiza table
             this.atualizaTableEvento();
             this._snackBar.openFromComponent(SnackBarNotificationComponent, {
@@ -98,7 +94,6 @@ export class EventoComponent implements OnInit {
             });
           }, error => {
             console.log(error)
-            this.loadingService.hideLoading();
           })
       }
     });
@@ -107,7 +102,7 @@ export class EventoComponent implements OnInit {
   editarEvento(row: Evento) {
     const dialogRef = this.dialog.open(DialogCadastroEvento, {
       data:
-        { horaCompensada: row }
+        { evento: row }
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -121,5 +116,5 @@ export class EventoComponent implements OnInit {
       }
     });
   }
-  
+
 }

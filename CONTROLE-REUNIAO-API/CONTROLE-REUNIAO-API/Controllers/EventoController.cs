@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Models.Context;
@@ -25,17 +26,25 @@ namespace CONTROLE_REUNIAO_API.Controllers
         [HttpGet]
         public IEnumerable<Evento> Get()
         {
-            return eventoServico.ObterTodosEager();
+            var eventos = eventoServico.ObterTodosEager().ToList();
+
+            // atribui sala para null de forma a evitar dependência circular.
+            //eventos.ForEach(e => { e.Sala = null; });
+
+            return eventos;
         }
 
         // GET api/evento/id
         [HttpGet("{id}")]
         public ActionResult<Evento> Get(int id)
         {
-            var horaExtras = eventoServico.ObterPorId(id);
+            var evento = eventoServico.ObterPorId(id);
+
+            // atribui sala para null de forma a evitar dependência circular.
+            //evento.Sala = null;
 
             Response.StatusCode = (int)HttpStatusCode.OK;
-            return new JsonResult(horaExtras);
+            return new JsonResult(evento);
         }
 
         // POST api/evento
@@ -44,14 +53,14 @@ namespace CONTROLE_REUNIAO_API.Controllers
         {
             try
             {
-                Evento horaExtra;
+                Evento evento;
                 using (var reader = new StreamReader(Request.Body))
                 {
                     var body = reader.ReadToEndAsync();
-                    horaExtra = JsonConvert.DeserializeObject<Evento>(body.Result);
+                    evento = JsonConvert.DeserializeObject<Evento>(body.Result);
                 }
 
-                eventoServico.Salvar(horaExtra);
+                eventoServico.Salvar(evento);
             }
             catch (Exception)
             {

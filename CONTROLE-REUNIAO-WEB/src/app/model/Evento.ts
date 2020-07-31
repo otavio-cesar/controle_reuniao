@@ -9,7 +9,8 @@ export class Evento {
   Dia: Date
   Inicio: Time
   Termino: Time
-
+  Responsavel: string
+  
   SalaId: number
   Sala: Sala
 }

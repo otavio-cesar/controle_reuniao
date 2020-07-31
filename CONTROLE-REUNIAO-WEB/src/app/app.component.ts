@@ -22,15 +22,11 @@ export class AppComponent {
   ngOnInit() { }
 
   loadingConfig() {
-    this.loadingService.missionAnnounced$.subscribe(
-      stateLoading => {
-        this.showLoading = stateLoading
-      });
+    // Cria um subscribe ao iniciar requisição. Mostra então loading.
+    this.loadingService.requestAnnounced$.subscribe(stateLoading => { this.showLoading = stateLoading });
 
-    this.loadingService.missionConfirmed$.subscribe(
-      stateLoading => {
-        this.showLoading = stateLoading
-      });
+    // Cria um subscribe ao finalizar requisição. Esconde então loading.
+    this.loadingService.responseConfirmed$.subscribe(stateLoading => { this.showLoading = stateLoading });
   }
 
 }

@@ -1,7 +1,6 @@
 ﻿using Model.Servicos;
 using Models.Context;
 using Models.Entities;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -18,7 +17,7 @@ namespace Servicos
 
         public IList<Evento> ObterTodosEager()
         {
-            var eventos = base.ObterTodos().ToList();
+            var eventos = base.ObterTodos().OrderByDescending(e => e.Dia).ToList();
 
             // adiciona entidade Sala ao evento
             eventos.ForEach(e => { completaDados(e); });
@@ -29,6 +28,7 @@ namespace Servicos
         private void completaDados(Evento evento)
         {
             evento.Sala = salaService.ObterPorId(evento.SalaId);
+            evento.Sala.Evento = null;
         }
 
     }

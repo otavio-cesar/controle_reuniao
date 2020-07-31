@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { timeToString } from 'src/app/Utils/DateTimeFormat';
+import { timeToString } from 'src/app/utils/DateTimeFormat';
 
 @Pipe({ name: 'hourPipe' })
 export class HourPipe implements PipeTransform {

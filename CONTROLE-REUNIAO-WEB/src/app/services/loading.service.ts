@@ -16,8 +16,8 @@ export class LoadingService {
   private hideLoadingSource = new Subject<boolean>();
 
   // Observable string streams
-  missionAnnounced$ = this.showLoadingSource.asObservable();
-  missionConfirmed$ = this.hideLoadingSource.asObservable();
+  requestAnnounced$ = this.showLoadingSource.asObservable();
+  responseConfirmed$ = this.hideLoadingSource.asObservable();
 
   // Service message commands
   showLoading() {

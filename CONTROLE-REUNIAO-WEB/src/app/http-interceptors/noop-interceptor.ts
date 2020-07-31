@@ -17,7 +17,7 @@ export class NoopInterceptor implements HttpInterceptor {
     Observable<HttpEvent<any>> {
     let ok: string;
 
-    console.log('int req')
+    console.log('Doing request...')
     this.loadingService.showLoading();
 
     return next.handle(req).pipe(tap(
@@ -28,7 +28,7 @@ export class NoopInterceptor implements HttpInterceptor {
     ),
       // Log when response observable either completes or errors
       finalize(() => {
-        console.log('int resp')
+        console.log('Response done.')
         
         this.loadingService.hideLoading();
       })
