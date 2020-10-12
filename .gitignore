@@ -1,7 +1,6 @@
 
-
-**/obj/
-**/bin/
+obj/
+bin/
 
 # Dependency directories
 node_modules/
