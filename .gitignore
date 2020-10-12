@@ -1,0 +1,7 @@
+
+
+obj/
+bin/
+
+# Dependency directories
+node_modules/

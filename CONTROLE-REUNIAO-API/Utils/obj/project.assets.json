@@ -5411,11 +5411,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Utils\\Utils.csproj",
+      "projectUniqueName": "C:\\Users\\otavio\\Documents\\otavio-workspace\\git\\controle_reuniao\\CONTROLE-REUNIAO-API\\Utils\\Utils.csproj",
       "projectName": "Utils",
-      "projectPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Utils\\Utils.csproj",
+      "projectPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\git\\controle_reuniao\\CONTROLE-REUNIAO-API\\Utils\\Utils.csproj",
       "packagesPath": "C:\\Users\\otavio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Utils\\obj\\",
+      "outputPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\git\\controle_reuniao\\CONTROLE-REUNIAO-API\\Utils\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5434,8 +5434,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\cartao de todos\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj"
+            "C:\\Users\\otavio\\Documents\\otavio-workspace\\git\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\otavio\\Documents\\otavio-workspace\\git\\controle_reuniao\\CONTROLE-REUNIAO-API\\Models\\Models.csproj"
             }
           }
         }
